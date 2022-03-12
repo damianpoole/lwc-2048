@@ -1,6 +1,6 @@
 <template>
     <template for:each={cells} for:item="cell">
-        <div key={cell.key} class="cell"></div>
+        <game-cell key={cell.key}></game-cell>
     </template>
     <template for:each={tiles} for:item="tile">
         <game-tile

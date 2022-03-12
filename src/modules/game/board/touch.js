@@ -23,6 +23,9 @@ export const touchMoveToGameMove = (event) => {
 
     if (Math.abs(diffX) < minMove && Math.abs(diffY) < minMove) return;
 
+    initialX = null;
+    initialY = null;
+
     if (Math.abs(diffX) > Math.abs(diffY)) {
         // horizontal
         if (diffX > 0) {
@@ -38,7 +41,4 @@ export const touchMoveToGameMove = (event) => {
             return MOVE.down;
         }
     }
-
-    initialX = null;
-    initialY = null;
 };

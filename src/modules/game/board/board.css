@@ -8,9 +8,3 @@
     padding: var(--cell-gap);
     position: relative;
 }
-
-.cell {
-    background-color: #bbb;
-    border: solid 1px #aaa;
-    border-radius: 1vmin;
-}

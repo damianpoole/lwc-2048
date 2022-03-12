@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true
+    },
+    "include": ["**/*", "../../node_modules/lwc/**/*.d.ts"],
+    "paths": {
+        "game/*": ["*"]
+    }
+}
