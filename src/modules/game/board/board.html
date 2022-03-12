@@ -1,0 +1,14 @@
+<template>
+    <template for:each={cells} for:item="cell">
+        <div key={cell.key} class="cell"></div>
+    </template>
+    <template for:each={tiles} for:item="tile">
+        <game-tile
+            key={tile.key}
+            value={tile.value}
+            x={tile.x}
+            y={tile.y}
+            data-tile={tile.key}
+        ></game-tile>
+    </template>
+</template>

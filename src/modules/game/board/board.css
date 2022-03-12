@@ -1,0 +1,16 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: #eee;
+    gap: var(--cell-gap);
+    border-radius: 1vmin;
+    padding: var(--cell-gap);
+    position: relative;
+}
+
+.cell {
+    background-color: #bbb;
+    border: solid 1px #aaa;
+    border-radius: 1vmin;
+}

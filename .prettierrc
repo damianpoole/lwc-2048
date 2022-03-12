@@ -1,0 +1,10 @@
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "**/modules/**/*.html",
+            "options": { "parser": "lwc" }
+        }
+    ]
+}

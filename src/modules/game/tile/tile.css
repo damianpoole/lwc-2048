@@ -1,0 +1,34 @@
+:host {
+    position: absolute;
+}
+
+div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 1vmin;
+    top: calc(
+        var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap)
+    );
+    left: calc(
+        var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap)
+    );
+    font-weight: bold;
+    background-color: hsl(240, 50%, var(--background-lightness));
+    color: hsl(200, 25%, var(--text-lightness));
+    transition: 100ms ease-in-out;
+}
+
+.show div {
+    animation: show 200ms ease-in-out;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0.5;
+        transform: scale(0);
+    }
+}
