@@ -1,5 +1,14 @@
 <template>
-  <main>
-    <game-board></game-board>
-  </main>
+    <div class="scoreboard">Score: {score}</div>
+    <game-board onscoreupdate={handleScoreUpdate}></game-board>
+    <div class="instructions">
+        <div>
+            <p>
+                The aim is to combine tiles of the same number in order to
+                create 2048 tile.
+            </p>
+
+            <p>Use the arrow keys or swipe to move tiles.</p>
+        </div>
+    </div>
 </template>

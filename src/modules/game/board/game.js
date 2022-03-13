@@ -3,7 +3,7 @@ import { canMove, slide } from './movement';
 import { MOVE } from './constants';
 
 const GRID_SIZE = 4;
-const CELL_SIZE = 20;
+const CELL_SIZE = 15;
 const CELL_GAP = 2;
 
 let CELLS;
@@ -136,15 +136,18 @@ const performMove = async (move) => {
         await actions[move].action.call();
     }
 
+    let score = 0;
+
     CELLS.forEach((cell) => {
-        const mergedKey = cell.mergeTiles();
+        const [mergedKey, mergeValue] = cell.mergeTiles();
         TILES = TILES.filter((tile) => tile.key != mergedKey);
+        if (mergeValue) score = score + mergeValue;
     });
 
     const newTile = createNewTile();
     TILES.push(newTile);
 
-    return [CELLS, TILES];
+    return [CELLS, TILES, score];
 };
 
 const setupGame = (board) => {

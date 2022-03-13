@@ -1,0 +1,33 @@
+:host {
+    margin: 0;
+    background-color: #333;
+    display: flex;
+    gap: 2vmin;
+    flex-direction: column;
+    align-items: center;
+    font-size: 7.5vmin;
+    height: 100%;
+}
+
+.scoreboard {
+    width: 70vmin;
+    height: fit-content;
+    font-size: 3vmin;
+    padding: 1vmin 0;
+    border-bottom: solid 1px hsla(0 0% 60% / 0.5);
+    color: #ded;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions {
+    width: 70vmin;
+    flex: 1;
+    font-size: 2.5vmin;
+    color: #ded;
+}
+
+.instructions div {
+    padding: 3vmin 2vmin;
+}

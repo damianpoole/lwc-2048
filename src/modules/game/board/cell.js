@@ -36,12 +36,13 @@ export default class Cell {
     }
 
     mergeTiles() {
-        if (this.tile == null || this.mergeTile == null) return;
+        if (this.tile == null || this.mergeTile == null) return [];
 
-        this.tile.value = this.tile.value + this.mergeTile.value;
+        const score = this.tile.value + this.mergeTile.value;
+        this.tile.value = score;
         const key = this.mergeTile.key;
         this.mergeTile = null;
 
-        return key;
+        return [key, score];
     }
 }

@@ -49,7 +49,9 @@ export default class Board extends LightningElement {
         if (move) {
             this.acceptsInput = false;
 
-            const [cells, tiles] = await Game.performMove(move);
+            const [cells, tiles, score] = await Game.performMove(move);
+
+            this.updateScore(score);
 
             this.acceptsInput = true;
 
@@ -76,7 +78,9 @@ export default class Board extends LightningElement {
 
         this.acceptsInput = false;
 
-        const [cells, tiles] = await Game.performMove(actions[key]);
+        const [cells, tiles, score] = await Game.performMove(actions[key]);
+
+        this.updateScore(score);
 
         if (cells) this.cells = [...cells];
         if (tiles) this.tiles = [...tiles];
@@ -92,6 +96,16 @@ export default class Board extends LightningElement {
                 alert('Game Over');
             }
         });
+    }
+
+    updateScore(score) {
+        if (score) {
+            this.dispatchEvent(
+                new CustomEvent('scoreupdate', {
+                    detail: score,
+                })
+            );
+        }
     }
 
     waitForTileTransition(key, animation) {
